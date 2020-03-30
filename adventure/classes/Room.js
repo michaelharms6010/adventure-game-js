@@ -11,6 +11,15 @@ class Room {
     getDescription() {
         return this.description
     }
+    getExits() {
+        let exits = []
+        if (this.n_to) exits.push("north")
+        if (this.s_to) exits.push("south")
+        if (this.e_to) exits.push("east")
+        if (this.w_to) exits.push("west")
+        if (exits.length === 1) return "There is an exit to the " + exits[0] + "."
+        return `Exits: ${exits.join(", ")}`
+    }
 }
 
 module.exports = Room;
