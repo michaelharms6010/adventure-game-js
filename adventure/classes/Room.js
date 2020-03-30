@@ -1,5 +1,5 @@
 class Room {
-    constructor(name, description, id, n_to=null, s_to=null, e_to=null, w_to=null) {
+    constructor(name, description, id, n_to=null, s_to=null, e_to=null, w_to=null,items) {
         this.name = name;
         this.description = description;
         this.id = id
@@ -7,6 +7,7 @@ class Room {
         this.s_to = s_to;
         this.e_to = e_to;
         this.w_to = w_to;
+        this.items = items;
     }
     getDescription() {
         return this.description
