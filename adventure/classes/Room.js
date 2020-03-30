@@ -12,3 +12,5 @@ class Room {
         return this.description
     }
 }
+
+module.exports = Room;
