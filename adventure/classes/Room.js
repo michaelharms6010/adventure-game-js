@@ -7,7 +7,6 @@ class Room {
         this.s_to = s_to;
         this.e_to = e_to;
         this.w_to = w_to;
-        console.log(items)
         this.items = items;
     }
     getDescription() {
