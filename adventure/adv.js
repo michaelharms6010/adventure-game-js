@@ -15,7 +15,7 @@ function playerTurn() {
     prompt(`You are ${player.current_room.name}. ${player.current_room.description} ${player.current_room.getExits()} Indicate your move:`, input => {
         if (directions[input] && player.current_room[`${input}_to`]) {
             player.current_room = rooms.find(item => item.id === player.current_room[`${input}_to`])
-            console.log(`You move ${directions[input]}. You are now in ${player.current_room.name}`)
+            console.log(`You move ${directions[input]}. You are now ${player.current_room.name}`)
             // process.exit()
             playerTurn();
         } else if(["n", "s", "e", "w"].includes(input)) {
