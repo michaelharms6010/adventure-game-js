@@ -1,4 +1,4 @@
-class Player {
+class Item {
     constructor(name, description) {
         this.name = name;
         this.description = description;
@@ -6,4 +6,4 @@ class Player {
 
 }
 
-module.exports = Player;
+module.exports = Item;

@@ -6,6 +6,9 @@ class Player {
     pickUp(item) {
         this.inventory.push(item)
     }
+    printItems() {
+        console.log(this.inventory.join(" "))
+    }
 
 }
 

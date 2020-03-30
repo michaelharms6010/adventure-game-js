@@ -9,10 +9,10 @@ const directions = {
     e:"east",
     w: "west"
 }
-let player = new Player( new Room("Outside","You're outside, dude.", 1, 2));
+let player = new Player( rooms[0]);
 playerTurn();
 function playerTurn() {
-    prompt(`You are ${player.current_room.name}. ${player.current_room.description} ${player.current_room.getExits()} Indicate your move:`, input => {
+    prompt(`You are ${player.current_room.name}. ${player.current_room.getDescription()} ${player.current_room.getExits()} Indicate your move:`, input => {
         if (directions[input] && player.current_room[`${input}_to`]) {
             player.current_room = rooms.find(item => item.id === player.current_room[`${input}_to`])
             console.log(`You move ${directions[input]}. You are now ${player.current_room.name}`)

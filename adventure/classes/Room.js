@@ -1,5 +1,5 @@
 class Room {
-    constructor(name, description, id, n_to=null, s_to=null, e_to=null, w_to=null,items) {
+    constructor(name, description, id, n_to=null, s_to=null, e_to=null, w_to=null,items=[]) {
         this.name = name;
         this.description = description;
         this.id = id
@@ -7,10 +7,12 @@ class Room {
         this.s_to = s_to;
         this.e_to = e_to;
         this.w_to = w_to;
+        console.log(items)
         this.items = items;
     }
     getDescription() {
-        return this.description
+
+        return `${this.description}\nItems here:\n${this.items.map(item => item.name).join(", \n")}\n`;
     }
     getExits() {
         let exits = []
