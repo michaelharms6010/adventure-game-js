@@ -21,6 +21,10 @@ function playerTurn() {
         } else if(["n", "s", "e", "w"].includes(input)) {
             console.log("You cannot move that direction.")
             playerTurn();
+        } else if(input.split(" ")[0] && input.split(" ")[0] === "get") {
+            console.log("You cannot move that direction.")
+            player.pickUp(input)
+            playerTurn();
         }
         else if (input === "q") {
             console.log("Goodbye!")
