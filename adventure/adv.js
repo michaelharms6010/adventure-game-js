@@ -23,13 +23,17 @@ function playerTurn() {
             playerTurn();
         }
         else if (input === "q") {
-            quit = true
             console.log("Goodbye!")
             process.exit()
         }else if (input === "rq") {
-            quit = true
             console.log("R-R-R-R-R-R-RRRRRRAGE QUIT!")
             process.exit()
+        } else if (input === "help") {
+            console.log("Type 'n', 's', 'e', or 'w' to move. Type 'q' to quit.")
+            playerTurn();
+        } else {
+            console.log("I didn't understand your input. Type 'help' for available commands.")
+            playerTurn();
         }
         
 
