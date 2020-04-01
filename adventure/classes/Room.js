@@ -11,7 +11,11 @@ class Room {
     }
     getDescription() {
 
-        return `${this.description}\nItems here:\n${this.items.map(item => item.name).join(", \n")}\n`;
+        if (this.items.length > 0) {
+            return `${this.description}\nItems here:\n${this.items.map(item => item.name).join(", \n")}\n`;
+        } else {
+            return `${this.description}\n`
+        }
     }
     getExits() {
         let exits = []

@@ -12,13 +12,13 @@ const directions = {
 let player = new Player( rooms[0]);
 playerTurn();
 function playerTurn() {
-    prompt(`You are ${player.current_room.name}. ${player.current_room.getDescription()} ${player.current_room.getExits()} Indicate your move:`, input => {
+    prompt(`You are ${player.current_room.name}. ${player.current_room.getDescription()}${player.current_room.getExits()} Indicate your move:`, input => {
         if (directions[input] && player.current_room[`${input}_to`]) {
             player.current_room = rooms.find(item => item.id === player.current_room[`${input}_to`])
             console.log(`You move ${directions[input]}. You are now ${player.current_room.name}`)
             // process.exit()
             playerTurn();
-        } else if(["n", "s", "e", "w"].includes(input)) {
+        } else if(directions[input]) {
             console.log("You cannot move that direction.")
             playerTurn();
         } else if(input.split(" ")[0] && input.split(" ")[0] === "get") {
