@@ -22,8 +22,10 @@ function playerTurn() {
             console.log("You cannot move that direction.")
             playerTurn();
         } else if(input.split(" ")[0] && input.split(" ")[0] === "get") {
-            console.log("You cannot move that direction.")
             player.pickUp(input)
+            playerTurn();
+        } else if(input.split(" ")[0] && input.split(" ")[0] === "drop") {
+            player.drop(input)
             playerTurn();
         }
         else if (input === "q") {
@@ -34,6 +36,9 @@ function playerTurn() {
             process.exit()
         } else if (input === "help") {
             console.log("Type 'n', 's', 'e', or 'w' to move. Type 'q' to quit.")
+            playerTurn();
+        } else if (input === "inventory") {
+            console.log(`Your inventory:\n${player.printItems()}`)
             playerTurn();
         } else {
             console.log("I didn't understand your input. Type 'help' for available commands.")

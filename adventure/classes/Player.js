@@ -14,8 +14,19 @@ class Player {
             console.log(`I don't see ${itemsearch} here.`)
         }
     }
+    drop(search) {
+        let itemsearch = search.replace("drop ", "");
+        let droppedItem = this.inventory.find(item => item.name === itemsearch || item.name.split(" ")[0] === itemsearch)
+        if (droppedItem) {
+            this.inventory = this.inventory.filter(item => item.name !== droppedItem.name);
+            this.current_room.items.push(droppedItem);
+            console.log(`You dropped ${droppedItem.name}`)
+        } else {
+            console.log(`You aren't carrying ${itemsearch}.`)
+        }
+    }
     printItems() {
-        console.log(this.inventory.join(" "))
+        return this.inventory.map(item => item.name).join("\n")
     }
 
 }
